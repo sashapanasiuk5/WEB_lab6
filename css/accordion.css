@@ -1,0 +1,83 @@
+.accordion-collapse{
+max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.accordion-body{
+	padding: 15px;
+	 border-right: 1px solid #c4c4c4;
+	border-left: 1px solid #c4c4c4;
+	border-top: 1px solid #c4c4c4;
+}
+
+.accordion{
+	display: flex;
+	flex-direction: column;
+
+}
+.accordion-header .title{
+	font-size: 16px;
+	font-family: "Montserrat Regular";
+}
+.accordion-header{
+	padding: 20px;
+	border-right: 1px solid #c4c4c4;
+	border-left: 1px solid #c4c4c4;
+	border-top: 1px solid #c4c4c4;
+	display: flex;
+	justify-content: space-between;
+}
+
+.accordion-item:last-child{
+	border-bottom: 1px solid #c4c4c4;
+}
+
+.accordion-header .arrow{
+	background-image: url("../icons/arrow.svg"); 
+	height: 20px;
+    width: 20px;
+    transform: none;
+}
+
+
+
+.accordion-item.active .arrow{
+	transform: rotateZ(180deg);
+	transition: transform 0.25s ease-in-out;
+}
+
+
+.accordion-form{
+	width: 300px;
+	padding-top: 50px;
+	margin: auto;
+	display: flex;
+	flex-direction: column;	
+	font-family: "Montserrat Regular";
+}
+
+.accordion-form input{
+	padding: 5px;
+	margin-bottom: 10px;
+	outline: none;
+	border-radius: 6px;
+	border: 1px solid #7c7c7c;
+}
+
+.accordion-form textarea{
+	height: 100px;
+	padding: 5px;
+	resize: vertical;
+	margin-bottom: 10px;
+	outline: none;	
+	border-radius: 6px;	
+	border: 1px solid #7c7c7c;
+}
+
+.accordion-form button{
+	padding: 5px;
+	outline: none;	
+	border-radius: 6px;	
+	border: 1px solid #7c7c7c;
+	background: #FCB300;
+}

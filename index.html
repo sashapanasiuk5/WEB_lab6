@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Car service</title>
+	<link rel="stylesheet" href="./css/styles.css">
+	<link rel="stylesheet" href="./css/accordion.css">
+	 <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<header>
+		<div class="logo">Car service</div>
+		<div class="discount-banner">
+			-10% discount
+		</div>
+	</header>
+	<div class="wrapper">
+		<div class="content">
+			<main>
+				<aside>
+					<div class="feedback side-block">
+						<div class="title">Last Feedback</div>
+						<div class="text">“ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam feugiat vitae sem non varius. ”
+							<div class="author"> – Dillan Sullivan</div></div>
+					</div>
+					<div class="contact-form side-block">
+						<div class="title">Need support?</div>
+						<form action="">
+							<input type="text" placeholder="Name">
+							<input type="text" placeholder="Phone">
+							<textarea placeholder="I have a problem..." id="" rows="6"></textarea>
+							<input type="submit" >
+						</form>
+					</div>
+				</aside>
+				<section>
+					<div class="title">Accordion Form</div>
+					<div class="accordion">
+						
+					</div>
+					<div class="accordion-form">
+						<input type="text" placeholder="Item name"> 
+						<textarea name="description" placeholder="Item description"></textarea>
+						<button id="addAccordionItemButton">Add Item</button>
+					</div>
+				</section>
+			</main>
+			<footer>
+				<div class="title">Contacts</div>
+				<div class="info">
+					<span id="phone">+38 068 7777 777</span>
+					<span id="email">carservice@gmail.com</span>
+				</div>
+			</footer>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="#" class="active">Перша сторінка</a></li>
+				<li><a href="second.html" >Друга сторінка</a></li>
+			</ul>
+		</nav>
+	</div>
+
+	<script type="text/javascript" src="./js/script.js"></script>
+	<script>
+		const xhttp = new XMLHttpRequest();
+
+		let accordion = document.querySelector(".accordion");
+		let titleInput = document.querySelector(".accordion-form input");
+		let descriptionInput = document.querySelector(".accordion-form textarea");
+
+		addItemButton.addEventListener("click", function(e){
+			if( (titleInput.value != "") && (descriptionInput.value != "")){
+				let item = CreateItem(titleInput.value, descriptionInput.value);
+				accordion.appendChild(item);
+				setAccordionHandlers(item);
+				xhttp.onload = function(){
+					if(xhttp.status == 200){
+						alert("Успішно додано");
+					}
+				}
+				xhttp.open("POST", "api.php");
+				xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				xhttp.send("action=addItem&title="+titleInput.value+"&description="+descriptionInput.value);
+			}
+		});
+	</script>
+</body>
+</html>
